@@ -1,6 +1,6 @@
 "use client";
 
-import { LinkIcon, BarChart2, Settings, Menu, X } from "lucide-react";
+import { LinkIcon, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
@@ -9,8 +9,6 @@ import { SignOut } from "./signout";
 import { User } from "./user";
 const navItems = [
   { icon: LinkIcon, label: "URL Management", href: "/dashboard/urls" },
-  { icon: BarChart2, label: "Analytics", href: "/dashboard/analytics" },
-  { icon: Settings, label: "Settings", href: "/dashboard/settings" },
 ];
 
 const Sidebar = () => {
@@ -22,7 +20,7 @@ const Sidebar = () => {
   return (
     <>
       {/* Move button inside aside to prevent overlap */}
-      <aside className={`fixed left-0 top-0 z-40 h-screen w-64 transform transition-transform duration-300 ease-in-out bg-blue-violet-50 ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
+      <aside className={`fixed left-0 top-0 z-40 border  h-screen w-64 transform transition-transform duration-300 ease-in-out bg-blue-violet-50 ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
         <button
           className="absolute -right-12 top-4 md:hidden bg-blue-violet-500 text-white p-2 rounded-md"
           onClick={toggleSidebar}

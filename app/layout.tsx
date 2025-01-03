@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
+
 import SessionAuthProvider from "@/context/session-auth.provider";
 import ReactQueryProvider from "@/context/tanstack-query.provider";
 
@@ -32,6 +34,7 @@ export default function RootLayout({
       >
         <SessionAuthProvider>
           <ReactQueryProvider>
+            <Toaster />
             {children}
           </ReactQueryProvider>
         </SessionAuthProvider>

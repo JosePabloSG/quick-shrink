@@ -50,7 +50,7 @@ export function Navbar() {
                 size="sm"
                 className="bg-blue-violet-500 hover:bg-blue-violet-600 text-white"
               >
-                Login / Sign Up
+                Sign In
               </Button>
             </Link>
           </div>
@@ -97,7 +97,7 @@ export function Navbar() {
           <div className="mt-4 px-3">
             <Link href="/auth/signin">
               <Button className="w-full bg-blue-violet-500 hover:bg-blue-violet-600 text-white" >
-                Login / Sign Up
+                Sign In
               </Button>
             </Link>
           </div>

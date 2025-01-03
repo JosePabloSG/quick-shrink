@@ -14,3 +14,14 @@ export interface Url {
   user: User;
   qrCode: string | null;
 }
+
+export interface CreateUrl {
+  originalUrl: string;
+  customAlias?: string | null;
+  password?: string;
+  expirationDate: string;
+}
+
+export interface UpdateUrl extends CreateUrl {
+  isActive: boolean;
+}

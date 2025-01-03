@@ -1,6 +1,9 @@
 
-import { Link, ArrowRightLeft, Clock, BarChart2, Lock, QrCode, Eye, UserCheck } from "lucide-react";
+import { Link, ArrowRightLeft, Clock, BarChart2, Lock, QrCode, Eye, UserCheck, Pencil } from "lucide-react";
 
+// "Monitor how many times your short link has been clicked, helping you track its popularity."
+// 
+// "Generate QR codes for your short links, making it easier for users to access them on mobile devices."
 import FeatureCard from "@/components/feature-card";
 const features = [
   {
@@ -19,19 +22,9 @@ const features = [
     icon: Clock
   },
   {
-    title: "Click Tracking",
-    description: "Monitor how many times your short link has been clicked, helping you track its popularity.",
-    icon: BarChart2
-  },
-  {
     title: "Password Protection",
     description: "Protect your short links with a password, ensuring only authorized users can access them.",
     icon: Lock
-  },
-  {
-    title: "QR Code Generation",
-    description: "Easily generate a QR code for your short link, making it simple to share offline.",
-    icon: QrCode
   },
   {
     title: "Link Preview",
@@ -39,10 +32,25 @@ const features = [
     icon: Eye
   },
   {
+    title: "Custom Aliases",
+    description: "Create custom aliases for your short links, making them more memorable and brand-friendly.",
+    icon: Pencil
+  },
+  {
     title: "Auth0 Integration",
     description: "Login quickly using your Google or GitHub account, simplifying the process of managing your links.",
     icon: UserCheck
-  }
+  },
+  {
+    title: "QR Code Generation",
+    description: "Coming soon!",
+    icon: QrCode
+  },
+  {
+    title: "Click Tracking",
+    description: "Coming soon!",
+    icon: BarChart2
+  },
 ];
 
 export default function Features() {
