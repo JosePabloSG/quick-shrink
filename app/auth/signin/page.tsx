@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { auth, signIn } from "@/auth";
@@ -60,9 +61,9 @@ export default async function SigninPage() {
 
         <p className="mt-8 text-center text-sm text-gravel-600">
           By continuing, you agree to QuickShrink's{" "}
-          <a href="/terms" className="font-medium text-blue-violet-600 hover:text-blue-violet-500">
+          <Link href="/terms" className="font-medium text-blue-violet-600 hover:text-blue-violet-500">
             Terms of Service
-          </a>
+          </Link>{" "}
         </p>
       </main>
 

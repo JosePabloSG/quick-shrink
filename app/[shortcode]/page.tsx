@@ -30,7 +30,7 @@ export default function Page() {
       </div>
     );
   }
-  
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gravel text-blue-violet">
       <p className="text-xl font-semibold">Redirecting...</p>

@@ -12,7 +12,7 @@ export const useVerifyPassword = () => {
     mutationFn: async ({ shortCode, password }: VerifyPasswordParams) => {
       const response = await verifyPassword(shortCode, password);
       return response;
-    }
+    },
   });
 
   return {
@@ -20,7 +20,7 @@ export const useVerifyPassword = () => {
     isLoading: mutation.isPending,
     isError: mutation.isError,
     error: mutation.error,
-    data: mutation.data
+    data: mutation.data,
   };
 };
 

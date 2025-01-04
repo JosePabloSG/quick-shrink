@@ -14,46 +14,39 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
     rules: {
-      // Allows apostrophes in JSX without escaping
-      "react/no-unescaped-entities": "off",
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-unused-vars": "off",
+      // React-specific rules
+      "react/no-unescaped-entities": "off", // Allows unescaped entities in JSX
+      "react-hooks/rules-of-hooks": "error", // Enforce Rules of Hooks
+      "react-hooks/exhaustive-deps": "warn", // Warn about missing dependencies in effects
+      "react/prop-types": "error", // Enforce prop types definition
+      "react/jsx-no-duplicate-props": "error", // Prevent duplicate props in JSX
+      "react/jsx-pascal-case": "error", // Enforce PascalCase for component names
 
-      // Prevent React Hooks issues
-      "react-hooks/rules-of-hooks": "error", // Enforces Rules of Hooks
-      "react-hooks/exhaustive-deps": "warn",  // Checks effect dependencies
+      // TypeScript-specific rules
+      "@typescript-eslint/no-explicit-any": "warn", // Discourage the use of 'any'
+      "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }], // Ignore unused args starting with '_'
 
-      // Code quality
-      "no-unused-vars": "error",         // Prevents dead code
-      "no-console": ["warn", { allow: ["warn", "error"] }], // No console.logs in prod
-      "no-duplicate-imports": "error",    // Prevents duplicate imports
-
-      // TypeScript specific
-      "@typescript-eslint/no-explicit-any": "warn",     // Discourages using 'any' type
-
-      // Error prevention
-      "no-var": "error",                 // Prefer const/let over var
-      "prefer-const": "error",           // Use const when possible
-      "no-multiple-empty-lines": ["error", { max: 1 }], // Consistent spacing
+      // General code quality
+      "no-unused-vars": "error", // Prevent unused variables
+      "no-console": ["warn", { allow: ["warn", "error"] }], // Allow console.warn and console.error
+      "no-duplicate-imports": "error", // Prevent duplicate imports
+      "no-var": "error", // Disallow var declarations
+      "prefer-const": "error", // Prefer const over let when possible
+      "no-multiple-empty-lines": ["error", { max: 1 }], // Limit consecutive empty lines
 
       // Import organization
       "import/order": ["error", {
-        "groups": ["builtin", "external", "internal"],
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
         "newlines-between": "always",
-        "alphabetize": { order: "asc" }
+        "alphabetize": { order: "asc", caseInsensitive: true },
       }],
 
-      // React specific
-      "react/prop-types": "error",       // Enforces prop types definition
-      "react/jsx-no-duplicate-props": "error", // No duplicate props
-      "react/jsx-pascal-case": "error",  // Components must be PascalCase
-
       // Code style
-      "indent": ["error", 2],            // 2 space indentation
-      "quotes": ["warn", "double", { avoidEscape: true }], // Use double quotes to match Next.js style
-      "semi": ["error", "always"]        // Required semicolons
-    }
-  }
+      "indent": ["error", 2], // Enforce 2-space indentation
+      "quotes": ["warn", "double", { avoidEscape: true }], // Enforce double quotes
+      "semi": ["error", "always"], // Require semicolons
+    },
+  },
 ];
 
 export default eslintConfig;
