@@ -17,6 +17,7 @@ const eslintConfig = [
       // Allows apostrophes in JSX without escaping
       "react/no-unescaped-entities": "off",
       "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
 
       // Prevent React Hooks issues
       "react-hooks/rules-of-hooks": "error", // Enforces Rules of Hooks

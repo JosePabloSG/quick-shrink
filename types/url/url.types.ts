@@ -22,6 +22,4 @@ export interface CreateUrl {
   expirationDate: string;
 }
 
-export interface UpdateUrl extends CreateUrl {
-  isActive: boolean;
-}
+export type UpdateUrl = CreateUrl

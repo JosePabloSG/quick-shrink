@@ -1,16 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
-
+import Link from "next/link";
 export default function Home() {
-  const [url, setUrl] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Implement URL shortening logic
-    console.log("Shortening URL:", url);
-  };
 
   return (
     <div className="min-h-screen flex flex-col bg-dull-lavender-50">
@@ -36,15 +28,12 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          onSubmit={handleSubmit}
           className="w-full max-w-md md:max-w-lg"
         >
           <div className="flex flex-col md:flex-row shadow-lg rounded-lg overflow-hidden">
             <input
               type="url"
               placeholder="Enter your long URL here..."
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
               className="flex-grow px-4 py-3 md:py-4 bg-white text-gravel-900 focus:outline-none focus:ring-2 focus:ring-blue-violet-400 transition-all duration-300 ease-in-out"
               required
             />
@@ -52,7 +41,9 @@ export default function Home() {
               type="submit"
               className="bg-blue-violet-500 text-white px-6 py-3 md:py-4 font-semibold hover:bg-blue-violet-600 focus:outline-none focus:ring-2 focus:ring-blue-violet-400 focus:ring-offset-2 transition-all duration-300 ease-in-out"
             >
-              Shorten URL
+              <Link href="/dashboard/urls">
+                Shorten URL
+              </Link>
             </button>
           </div>
         </motion.form>

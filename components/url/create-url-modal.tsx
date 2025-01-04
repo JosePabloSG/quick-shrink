@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
 } from "@/components/ui/popover";
-import useCreateUrl from "@/hooks/urls/commands/create/useCreateUrl";
+import { useCreateUrl } from "@/hooks";
 
 export function CreateUrlModal() {
   const {
