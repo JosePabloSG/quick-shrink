@@ -6,3 +6,4 @@ export { default as useCreateUrl } from "./urls/commands/create/useCreateUrl";
 export { default as useUpdateUrl } from "./urls/commands/update/useUpdateUrl";
 export { default as useDeleteUrl } from "./urls/commands/delete/useDeleteUrl";
 export { default as useArtificialDelay } from "./useArtificialDelay";
+export { default as useDeleteUser } from "./user/commands/delete/useDeleteUser";

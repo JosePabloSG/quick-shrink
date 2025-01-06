@@ -1,6 +1,6 @@
 "use client";
 
-import { LinkIcon, Menu, X } from "lucide-react";
+import { LinkIcon, Settings, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
@@ -9,6 +9,7 @@ import { SignOut } from "./signout";
 import { User } from "./user";
 const navItems = [
   { icon: LinkIcon, label: "URL Management", href: "/dashboard/urls" },
+  { icon: Settings , label: "Settings", href: "/dashboard/settings" },
 ];
 
 const Sidebar = () => {
